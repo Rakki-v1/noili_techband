@@ -1,0 +1,118 @@
+$white: #FFFFFF;
+$light-grey:#ECEADC;
+$light-brown:#795D41;
+$black-var:#090906;
+
+@mixin custom-button {
+    background-color: #ECEADC;
+    color:#795D41;
+    border: none;
+    border-radius: 0;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Neue Montreal";
+    margin-top: 75px;
+    margin-left:30px;
+    align-self: flex-start;
+}
+
+@font-face {
+    font-family: "Neue Montreal";
+    src: url("./font/NeueMontreal-Medium.otf") format("opentype");
+}
+
+// all, body
+* {
+    margin:0;
+    padding:0;
+    font-family: "Neue Montreal";
+    box-sizing: border-box;
+}
+
+body {
+    background: url("./images/Intersection 1.png");
+    background-size: cover;
+    position: relative;
+    background-repeat: no-repeat;
+    overflow: hidden;
+    height: 100vh;
+}
+// end of all,body
+
+// header
+header {
+    background-color: $black-var;
+    height: auto;
+    line-height: 15px;
+    font-size: 13px;
+}
+
+header {
+    div {
+        color:$light-grey;
+    }
+}
+
+.fa-times {
+    font-size: 0.75rem;
+}
+// end of header
+
+// NAV
+.navbar-toggler:focus {
+    border: 0 !important;
+    box-shadow: none !important;
+}
+
+.nav-item {
+    padding: 0 0.5rem;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    color: black!important;
+    background-color: transparent!important;
+    border:none!important;
+    font-size: .90rem!important;
+    padding:0;
+}
+
+.navbar-nav {
+    button {
+        span {
+            font-size: .5rem;
+        }
+    }
+}
+
+// wrapper
+.wrapper .btn-primary {
+    @include custom-button()
+}
+
+.image-container {
+    margin-left:7rem;
+    margin-top:-10rem;
+}
+
+// responsiveness
+@media (max-width: 992px) {
+    
+    body {
+        background-position: center;
+        nav {
+            background-color: $light-grey;
+            .navbar-collapse {
+                order: 3;
+                background-color: $light-grey;
+            }
+            .navbar-brand {
+                margin-left: 75px;
+            }
+        }
+        .image-container {
+            margin-left: 1rem;
+        }
+    }
+}
